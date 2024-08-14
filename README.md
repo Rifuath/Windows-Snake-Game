@@ -56,6 +56,7 @@ There's also a commented-out release build configuration for optimized builds.
 - Collision detection is implemented for self-collision and boundaries.
 
 ## Project Structure
+```
 Snake/
 │
 ├── src/
@@ -65,6 +66,7 @@ Snake/
 │   └── (compiled executable and debug files)
 │
 └── build.bat
+```
 
 ## Future Improvements
 
