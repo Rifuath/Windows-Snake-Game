@@ -1,6 +1,6 @@
 # Windows Snake Game
 
-This is a simple Snake game implemented in C++ for Windows using a custom software renderer. The game uses the Windows API for window management and input handling, while the rendering is done using a custom bitmap buffer.
+This is a simple Snake game implemented in C/C++ for Windows using a custom software renderer. The game uses the Windows API for window management and input handling, while the rendering is done using a custom bitmap buffer.
 
 ## Features
 
