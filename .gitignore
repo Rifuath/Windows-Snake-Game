@@ -2,4 +2,4 @@
 *.obj
 *.ilk
 *.pdb
-/.vs
+.vs/
