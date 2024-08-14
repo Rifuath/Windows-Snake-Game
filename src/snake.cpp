@@ -198,8 +198,6 @@ internal void Win32DrawSquare(win32_bitmap_buffer * Buffer, int x, int y, int wi
 }
 internal void Win32DrawGrid(win32_bitmap_buffer *Buffer, int X, int Y, int gridSize,  int gridDimension, uint32 color)
 {
-
-    //Win32DrawGrid(&GlobalBackBuffer,GlobalGridX, GlobalGridY, GlobalGridSize, GlobalGridDimension, 0xff333344);
     // Draw vertical lines
     for (int x = X; x <= X + gridDimension; x += gridSize)
     {
@@ -211,16 +209,6 @@ internal void Win32DrawGrid(win32_bitmap_buffer *Buffer, int X, int Y, int gridS
     {
         Win32DrawLine(Buffer, X, y, X + gridDimension, y, color);
     }
-    /*
-       for(int y = 0; y < GlobalClientHeight; y+=gridSize)
-       {
-       for(int x = 0; x < GlobalClientWidth; x+=gridSize)
-       {
-       Win32DrawSquare(Buffer , x, y, gridSize, color, Outline);
-
-       }
-       }
-     */
 }
 
 
@@ -262,7 +250,7 @@ internal void Win32ResizeDIBSection(win32_bitmap_buffer *Buffer, int Width, int 
 
     Buffer->Width = Width;
     Buffer->Height = Height;
-    Buffer->BytesPerPixel = 4;
+    Buffer->BytesPerPixel = 4; //4 bytes == 32 bits
     Buffer->Pitch = Buffer->Width * Buffer->BytesPerPixel;
 
     // global variable init 'BitmapInfo'
@@ -276,7 +264,7 @@ internal void Win32ResizeDIBSection(win32_bitmap_buffer *Buffer, int Width, int 
     // alloc bitmap memory
     // r g b = 24 bytes but need bits alligned so 32 bit 
     // each carries 8 bytes so 8 + 8 + 8 is the rgb but need 8 more for 32 bit.
-    // which makes in total 4, 8 bytes
+    // which makes in total 4 bytes
 
     int BitmapMemorySize = (Buffer->Width * Buffer->Height) * Buffer->BytesPerPixel;
 
